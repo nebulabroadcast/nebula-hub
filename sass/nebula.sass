@@ -1,0 +1,226 @@
+$fa-font-path: "../fonts/font-awesome"
+$FontPath:     "../fonts/roboto"
+
+$font-family-sans-serif: "Roboto"
+$border-radius:   0px
+$border-radius-lg:  0px
+$border-radius-sm:  0px
+
+$primary: #2c2c3c
+$secondary: #21212d
+
+$blue:    #0275d8 !default
+$indigo:  #6610f2 !default
+$purple:  #6f42c1 !default
+$pink:    #e83e8c !default
+$red:     #d9534f !default
+$orange:  #f0ad4e !default
+$yellow:  #ffc107 !default
+$green:   #5cb85c !default
+$teal:    #20c997 !default
+$cyan:    #5bc0de !default
+
+@import "roboto"
+@import "font-awesome"
+@import "bootstrap"
+@import "hamburger"
+@import "switch"
+@import "bootstrap-select"
+
+
+//
+// Layout
+//
+
+html
+  height: 100%
+  overflow-y: scroll
+
+body
+  padding: 0
+  margin: 0
+
+main
+  @extend .container-fluid
+  margin-top: 140px
+  overflow-x: auto
+
+.popup
+  background-color: #ff4136
+  position: fixed
+  padding: 20px
+  left: 50%
+  top: 50%
+  transform: translate(-50%, -50%)
+  z-index: 1001
+  color: white
+
+.card
+  margin-bottom: 30px
+  .card-header
+    background-color: $primary
+    color: #eee
+  p
+    font-size: 14px
+    margin-bottom: 10px
+  .progress
+    height: 8px
+
+.form-control
+    border: 1px solid $gray-500
+    background: $gray-100
+    color: black
+
+#loader
+  position: fixed
+  z-index: 500
+  background-color: white
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+
+
+//
+// Page specifics
+//
+
+#page-login, #page-passreset
+  background-color: $primary
+  #loader
+    display: none
+
+// Login
+#login-window
+  @extend .popup
+  background-color: $secondary
+  width: 300px
+  img
+    width: 200px
+    height: auto
+    margin-bottom: 30px
+    margin-top: 20px
+    
+  h1
+    font-size: 28px
+    margin-bottom: 18px
+    
+  a
+    color: $blue
+    
+  input:-webkit-autofill
+    -webkit-box-shadow: 0 0 0px 1000px white inset
+    
+  hr
+      background-color: #2c2c3c
+
+// Password reset
+#passreset-window
+  @extend #login-window
+  width: 400px
+
+// Error page
+#error-window
+  @extend #login-window
+  background-color: $red
+
+//
+// Navbars
+//
+
+nav
+  @extend .fixed-top
+  min-width: 300px
+
+@mixin nav
+  @extend .navbar
+  @extend .navbar-dark
+  @extend .navbar-expand-md
+
+  a:not(.dropdown-item), .btn
+    text-transform : uppercase
+    user-select: none
+    color: $navbar-dark-color
+
+  input
+    border: 0
+    border-bottom: 1px solid $navbar-dark-color 
+    padding-left:  0
+    padding-right: 0
+    background-color: transparent
+    color: $navbar-dark-active-color
+  
+  .input-timecode
+    width: 120px
+    min-width: 120px
+    font-family: monospace
+    text-align: center
+
+#site-nav
+  @include nav
+  background-color: $secondary
+  z-index : 1000
+
+#page-nav
+  @include nav
+  background-color: $primary
+  z-index: 900
+
+.navbar-brand img
+  margin-left: 8px
+  margin-right: 20px
+  height: 3rem
+  width: auto
+  padding: 0
+
+.navbar-text
+//  max-height: 1.7rem
+//  overflow: hidden
+
+//
+// Tables
+//
+
+table
+  @extend .table
+  @extend .table-hover
+  td
+    width: auto
+    font-size: 12px
+    vertical-align: middle
+
+  th
+    border-top: none
+
+  .min
+    width: .1%
+    white-space: nowrap
+
+  .badge
+    font-size: 12px
+    color: #fff
+    padding: 5px
+    text-transform: uppercase
+    width: 100%
+
+  .service-state-label
+    font-size: 12px
+    padding: 10px
+
+  .service-toggle-button
+    text-transform: uppercase
+
+
+//
+// Nebula
+//
+
+#tab-panels-detail
+  padding: 20px
+
+#preview-container
+  padding: 20px
+  margin: 0 auto
+
+  video
+    width: 100%
