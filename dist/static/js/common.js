@@ -1,4 +1,6 @@
 $.fn.selectpicker.Constructor.BootstrapVersion = '4';
+$.fn.selectpicker.Constructor.DEFAULTS.dropupAuto = false;
+
 
 (function (window, document, undefined) {
     "use strict";

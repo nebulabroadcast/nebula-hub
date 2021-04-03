@@ -30,14 +30,14 @@ function finished {
     exit 0
 }
 
-if [ "$(id -u)" != "0" ]; then
-   echo "This script must be run as root" 1>&2
-   error_exit
-fi
-
-if [ ! -d ${temp_dir} ]; then
-    mkdir ${temp_dir} || error_exit
-fi
+#if [ "$(id -u)" != "0" ]; then
+#   echo "This script must be run as root" 1>&2
+#   error_exit
+#fi
+#
+#if [ ! -d ${temp_dir} ]; then
+#    mkdir ${temp_dir} || error_exit
+#fi
 
 ## COMMON UTILS
 ##############################################################################
