@@ -48,7 +48,7 @@
                 name="{{ key }}"
                 class="form-control"
                 type="number"
-                value="{{ page.asset[key] }}"
+                value="{{ page.asset.show(key) }}"
                 id="input-key-{{ loop.index }}">
 
         {% elif key_class == 3 %} {# numeric #}
