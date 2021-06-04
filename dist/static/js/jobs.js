@@ -21,7 +21,7 @@ function load_jobs(){
             rid = row["id"];
             rstatus = row["status"];
             rprogress = row["progress"];
-            rmessage = row["message"];
+            rmessage = row["message"].split("\n")[0]
             rctime = row["ctime"];
             rstime = row["stime"];
             retime = row["etime"];
@@ -88,7 +88,7 @@ function seismic_handler(data){
         $("#job-table-body tr").each(function(){
             if ($(this).attr("data-href") == params["id"]) {
                 $(".progress-bar", this).css("width", params["progress"] +"%");
-                $(".job-message", this).html(params["message"]);
+                $(".job-message", this).html(params["message"].split("\n")[0]);
 
                 if ($(this).attr("data-status") != params["status"])
                     table_changed = true;
